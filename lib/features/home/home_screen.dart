@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:halal_maskin_app/features/home/widgets/category_item_widget.dart';
+import 'package:halal_maskin_app/features/home/widgets/food_card_items_widget.dart';
 import 'package:halal_maskin_app/features/home/widgets/offer_banner_widget.dart';
+import 'package:halal_maskin_app/features/home/widgets/section_header_widget.dart';
 import '../../core/common_widgets/text_field_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final searchController = TextEditingController();
+
+  bool isLiked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -88,73 +93,147 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
 
               // Text
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Top-Rated Restaurants",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-
-                  GestureDetector(
-                    onTap: () {},
-                    child: Row(
-                      children: [
-                        Text(
-                          "See all",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.green,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        SizedBox(width: 4),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          size: 16,
-                          color: Colors.green,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              SectionHeader(
+                title: "Popular cuisines",
+                actionText: "See all",
+                onTap: () {},
               ),
 
               const SizedBox(height: 10),
 
-              Container(
-                height: 60,
-                width: 80,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(color: Colors.black12, width: 1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 15,
-                      spreadRadius: 0,
-                      offset: Offset(0, 0),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.restaurant_menu_outlined, size: 25),
-                    Text(
-                      "Pizza",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
+              // Category items
+              Wrap(
+                spacing: 5,
+                runSpacing: 5,
+                children: [
+                  CategoryItem(
+                    icon: Icons.restaurant_menu_outlined,
+                    title: "Pizza",
+                    onTap: () {},
+                  ),
+
+                  CategoryItem(
+                    icon: Icons.restaurant_menu_outlined,
+                    title: "Fry Fish",
+                    onTap: () {},
+                  ),
+
+                  CategoryItem(
+                    icon: Icons.restaurant_menu_outlined,
+                    title: "Coffee",
+                    onTap: () {},
+                  ),
+
+                  CategoryItem(
+                    icon: Icons.restaurant_menu_outlined,
+                    title: "Burger",
+                    onTap: () {},
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              // Header
+              SectionHeader(
+                title: "Top-Rated Restaurants",
+                actionText: "See all",
+                onTap: () {},
+              ),
+
+              const SizedBox(height: 10),
+
+              // Food Card
+              Row(
+                children: [
+                  Wrap(
+                    spacing: 15,
+                    runSpacing: 10,
+                    children: [
+                      FoodCardItemWidget(
+                        title: "Awari Express",
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Iajzp-onUeDOfrpk3zO0QNPzIXXoEBCWXw&s",
+                        rating: 4.8,
+                        onTap: () {
+                          // print("Card tapped!");
+                        },
+                        onLikeTap: () {
+                          setState(() {
+                            isLiked = !isLiked;
+                          });
+                        },
                       ),
-                    ),
-                  ],
-                ),
+
+                      FoodCardItemWidget(
+                        title: "Grand Continental",
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUN6kUPiRXVlTfwUB7_5FdUcxyT1zCd6rpqQ&s",
+                        rating: 4.8,
+                        onTap: () {
+                          // print("Card tapped!");
+                        },
+                        onLikeTap: () {
+                          setState(() {
+                            isLiked = !isLiked;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              // Header
+              SectionHeader(
+                title: "Restaurants Nearby",
+                actionText: "See all",
+                onTap: () {},
+              ),
+
+              const SizedBox(height: 10),
+
+              // Food Card
+              Row(
+                children: [
+                  Wrap(
+                    spacing: 15,
+                    runSpacing: 10,
+                    children: [
+                      FoodCardItemWidget(
+                        title: "Awari Express",
+                        imageUrl:
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8iBoZXLA4otfuG11v8QZiNgvTvvHuJ4bCQ&s",
+                        rating: 4.8,
+                        onTap: () {
+                          // print("Card tapped!");
+                        },
+                        onLikeTap: () {
+                          setState(() {
+                            isLiked = !isLiked;
+                          });
+                        },
+                      ),
+
+                      FoodCardItemWidget(
+                        title: "Grand Continental",
+                        imageUrl:
+                            "https://img.freepik.com/free-photo/we-serve-best-cakes_637285-7884.jpg",
+                        rating: 4.8,
+                        onTap: () {
+                          // print("Card tapped!");
+                        },
+                        onLikeTap: () {
+                          setState(() {
+                            isLiked = !isLiked;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
