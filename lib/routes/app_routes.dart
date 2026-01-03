@@ -1,6 +1,10 @@
+import 'package:halal_maskin_app/features/authentication/forget_password/forget_password_screen.dart';
+import 'package:halal_maskin_app/features/authentication/password_changed/password_changed_screen.dart';
+import 'package:halal_maskin_app/features/authentication/reset_password/reset_password_screens.dart';
 import 'package:halal_maskin_app/features/authentication/sign_in/sign_in_screen.dart';
 import 'package:halal_maskin_app/features/authentication/sign_up/sign_up_screen.dart';
 import 'package:halal_maskin_app/features/authentication/welcome/welcome_screen.dart';
+import 'package:halal_maskin_app/features/dashboard/dashboard.dart';
 import 'app_paths.dart';
 import 'navigation_services.dart';
 import 'package:go_router/go_router.dart';
@@ -26,6 +30,30 @@ class AppRoutes {
         path: AppPaths.signUp,
         pageBuilder: (context, state) =>
             NavigationServices.instant(const SignUpScreen(), state),
+      ),
+
+      GoRoute(
+        path: AppPaths.forgotPassword,
+        pageBuilder: (context, state) =>
+            NavigationServices.instant(const ForgetPasswordScreen(), state),
+      ),
+
+      GoRoute(
+        path: AppPaths.resetPassword,
+        pageBuilder: (context, state) =>
+            NavigationServices.instant(const ResetPasswordScreens(), state),
+      ),
+
+      GoRoute(
+        path: AppPaths.passwordChanged,
+        pageBuilder: (context, state) =>
+            NavigationServices.instant(const PasswordChangedScreen(), state),
+      ),
+
+      GoRoute(
+        path: AppPaths.dashboard,
+        pageBuilder: (context, state) =>
+            NavigationServices.instant(const Dashboard(), state),
       ),
     ],
   );

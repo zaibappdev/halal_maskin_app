@@ -12,11 +12,9 @@ class AppThemes {
     colorScheme: const ColorScheme.light(
       primary: AppColors.blue600,
       secondary: AppColors.indigo400,
-      background: AppColors.white900,
       surface: AppColors.white900,
       onPrimary: AppColors.white900,
       onSecondary: AppColors.black900,
-      onBackground: AppColors.black900,
       onSurface: AppColors.black900,
     ),
 
@@ -79,11 +77,9 @@ class AppThemes {
     colorScheme: const ColorScheme.dark(
       primary: AppColors.blue400,
       secondary: AppColors.indigo300,
-      background: AppColors.black900,
       surface: AppColors.black800,
       onPrimary: AppColors.black900,
       onSecondary: AppColors.white900,
-      onBackground: AppColors.white900,
       onSurface: AppColors.white900,
     ),
 

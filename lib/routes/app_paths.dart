@@ -5,7 +5,11 @@ class AppPaths {
   // ---------- Authentication ----------
   static const String login = '/login';
   static const String signUp = '/signup';
-  static const String forgotPassword = '/forgot-password';
+  static const String forgotPassword = '/forgot_password';
+  static const String resetPassword = '/reset_password';
+  static const String passwordChanged = '/password_changed';
+
+
 
   // ---------- Dashboard / Tabs ----------
   static const String dashboard = '/dashboard';

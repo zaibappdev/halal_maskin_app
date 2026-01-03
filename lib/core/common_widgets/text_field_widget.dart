@@ -12,6 +12,9 @@ class TextFieldWidget extends StatefulWidget {
   final IconData? suffixIcon;
   final VoidCallback? onSuffixTap;
 
+  final bool showPrefixIcon;
+  final IconData? prefixIcon;
+
   const TextFieldWidget({
     super.key,
     required this.controller,
@@ -22,6 +25,8 @@ class TextFieldWidget extends StatefulWidget {
     this.showSuffixIcon = false,
     this.suffixIcon,
     this.onSuffixTap,
+    this.showPrefixIcon = false,
+    this.prefixIcon,
   });
 
   @override
@@ -65,6 +70,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               fontSize: 16,
               fontWeight: FontWeight.w400,
             ),
+
+            prefixIcon: widget.showPrefixIcon
+                ? Icon(widget.prefixIcon, color: Colors.black54)
+                : null,
 
             suffixIcon: widget.isPassword
                 ? GestureDetector(
