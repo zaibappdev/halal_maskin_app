@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:halal_maskin_app/features/setting/widgets/list_tile_widget.dart';
+import '../../routes/app_paths.dart';
+import '../../routes/navigation_services.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -21,7 +23,9 @@ class _SettingScreenState extends State<SettingScreen> {
         centerTitle: false,
 
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            NavigationServices.push(AppPaths.dashboard);
+          },
           icon: Icon(Icons.arrow_back_outlined, color: Colors.black, size: 25),
         ),
 
@@ -53,21 +57,23 @@ class _SettingScreenState extends State<SettingScreen> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              CustomSettingTile(
+              ListTileWidget(
                 leadingIcon: Icons.person_outline,
                 title: "Profile",
                 trailingIcon: Icons.arrow_forward_ios_rounded,
-                onTap: () {},
+                onTap: () {
+                  NavigationServices.push(AppPaths.profile);
+                },
               ),
 
-              CustomSettingTile(
+              ListTileWidget(
                 leadingIcon: Icons.lock_outline,
                 title: "Password",
                 trailingIcon: Icons.arrow_forward_ios_rounded,
                 onTap: () {},
               ),
 
-              CustomSettingTile(
+              ListTileWidget(
                 leadingIcon: Icons.notifications_none,
                 title: "Notifications",
                 trailingIcon: Icons.arrow_forward_ios_rounded,
@@ -84,7 +90,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ),
 
-              CustomSettingTile(
+              ListTileWidget(
                 leadingIcon: Icons.table_bar_outlined,
                 title: "Explore Cuisines",
                 trailingIcon: Icons.arrow_forward_ios_rounded,
@@ -92,21 +98,21 @@ class _SettingScreenState extends State<SettingScreen> {
                 onTap: () {},
               ),
 
-              CustomSettingTile(
+              ListTileWidget(
                 leadingIcon: Icons.star_rate_outlined,
                 title: "Rate & Review",
                 trailingIcon: Icons.arrow_forward_ios_rounded,
                 onTap: () {},
               ),
 
-              CustomSettingTile(
+              ListTileWidget(
                 leadingIcon: Icons.help_outline_outlined,
                 title: "Help & Support",
                 trailingIcon: Icons.arrow_forward_ios_rounded,
                 onTap: () {},
               ),
 
-              CustomSettingTile(
+              ListTileWidget(
                 leadingIcon: Icons.login_outlined,
                 title: "Logout",
                 onTap: () {},

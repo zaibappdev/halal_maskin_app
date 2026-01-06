@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomSettingTile extends StatelessWidget {
+class ListTileWidget extends StatelessWidget {
   final IconData leadingIcon;
   final String title;
   final IconData? trailingIcon;
   final VoidCallback onTap;
   final bool isTitleCenter;
 
-  const CustomSettingTile({
+  const ListTileWidget({
     super.key,
     required this.leadingIcon,
     required this.title,
