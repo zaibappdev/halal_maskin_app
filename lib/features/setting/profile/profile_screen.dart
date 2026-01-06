@@ -25,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
         leading: IconButton(
           onPressed: () {
-            NavigationServices.push(AppPaths.settings);
+            NavigationServices.go(AppPaths.settings);
           },
           icon: Icon(Icons.arrow_back_outlined, color: Colors.black, size: 25),
         ),
@@ -87,7 +87,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ProfileButton(text: "Edit Profile", onTap: () {}),
+                  ProfileButton(
+                    text: "Edit Profile",
+                    onTap: () {
+                      NavigationServices.go(AppPaths.editProfile);
+                    },
+                  ),
 
                   const SizedBox(width: 10),
 

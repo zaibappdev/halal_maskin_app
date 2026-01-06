@@ -22,28 +22,19 @@ class _SettingScreenState extends State<SettingScreen> {
         automaticallyImplyLeading: false,
         centerTitle: false,
 
-        leading: IconButton(
-          onPressed: () {
-            NavigationServices.push(AppPaths.dashboard);
-          },
-          icon: Icon(Icons.arrow_back_outlined, color: Colors.black, size: 25),
-        ),
-
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.notifications_none_outlined,
-              color: Colors.black,
-              size: 25,
-            ),
+        title: Text(
+          "Settings",
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.black,
+            fontWeight: FontWeight.w800,
           ),
-        ],
+        ),
       ),
 
       // Body
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

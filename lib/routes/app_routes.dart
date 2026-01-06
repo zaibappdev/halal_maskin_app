@@ -5,6 +5,7 @@ import 'package:halal_maskin_app/features/authentication/sign_in/sign_in_screen.
 import 'package:halal_maskin_app/features/authentication/sign_up/sign_up_screen.dart';
 import 'package:halal_maskin_app/features/authentication/welcome/welcome_screen.dart';
 import 'package:halal_maskin_app/features/dashboard/dashboard.dart';
+import 'package:halal_maskin_app/features/setting/profile/edit_profile/edit_profile_screen.dart';
 import 'package:halal_maskin_app/features/setting/profile/profile_screen.dart';
 import 'package:halal_maskin_app/features/setting/setting_screen.dart';
 import 'app_paths.dart';
@@ -57,11 +58,6 @@ class AppRoutes {
         pageBuilder: (context, state) =>
             NavigationServices.instant(const Dashboard(), state),
       ),
-      GoRoute(
-        path: AppPaths.dashboard,
-        pageBuilder: (context, state) =>
-            NavigationServices.instant(const Dashboard(), state),
-      ),
 
       GoRoute(
         path: AppPaths.settings,
@@ -73,6 +69,12 @@ class AppRoutes {
         path: AppPaths.profile,
         pageBuilder: (context, state) =>
             NavigationServices.instant(const ProfileScreen(), state),
+      ),
+
+      GoRoute(
+        path: AppPaths.editProfile,
+        pageBuilder: (context, state) =>
+            NavigationServices.instant(const EditProfileScreen(), state),
       ),
     ],
   );

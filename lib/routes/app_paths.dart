@@ -16,6 +16,7 @@ class AppPaths {
   static const String home = '/home';
   static const String profile = '/profile';
   static const String settings = '/settings';
+  static const String editProfile = '/edit_profile';
   static const String notifications = '/notifications';
 
   // ---------- Utilities ----------
